@@ -1,5 +1,5 @@
-<%@page import="dao.LoaiGiay"%>
-<%@page import="dal.LoaiGiayDAL"%>
+<%@page import="model.LoaiGiay"%>
+<%@page import="service.LoaiGiayService"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 
@@ -12,9 +12,7 @@
 
 </head>
 <body>
-	<%
-		LoaiGiayDAL listGiay = new LoaiGiayDAL();
-	%>
+
 	<div class="header">
 		<div class="headertop_desc">
 			<div class="call">
@@ -35,8 +33,7 @@
 		</div>
 		<div class="header_top">
 			<div class="logo">
-				<a href="index.html"><img src="resources//images/logo.png"
-					alt="" /></a>
+				<a href="index.jsp"><img src="resources/images/logo.png" alt="" /></a>
 			</div>
 			<div class="cart">
 				<p>
@@ -81,11 +78,11 @@
 		<div class="header_bottom">
 			<div class="menu">
 				<ul>
-					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="delivery.html">Delivery</a></li>
-					<li><a href="news.html">News</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li class="active"><a href="index.jsp">Home</a></li>
+					<li><a href="about.jsp">About</a></li>
+					<li><a href="delivery.jsp">Delivery</a></li>
+					<li><a href="news.jsp">News</a></li>
+					<li><a href="contact.jsp">Contact</a></li>
 					<div class="clear"></div>
 				</ul>
 			</div>
@@ -103,17 +100,9 @@
 				<div class="categories">
 					<ul>
 						<h3>Categories</h3>
-						<%
-							for (LoaiGiay giay : listGiay.getListLoaiGiay()) {
-						%>
-						<li><a href="#"><%=giay.getTen()%></a></li>
-						<%
-							}
-						%>
-						<!--<c:forEach items="${listLoaiGiay}" var="loaiGiay">
-							<li><a href="#">${loaiGiay.getTen()} </a></li>
+						<c:forEach items="${listLoaiGiay}" var="loaigiay">
+							<li><a href="#">${loaigiay.getTen() } </a></li>
 						</c:forEach>
-						<-->
 					</ul>
 				</div>
 			</div>
