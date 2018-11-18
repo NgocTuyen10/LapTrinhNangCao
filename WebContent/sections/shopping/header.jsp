@@ -101,7 +101,8 @@
 					<ul>
 						<h3>Categories</h3>
 						<c:forEach items="${listLoaiGiay}" var="loaigiay">
-							<li><a href="#">${loaigiay.getTen() } </a></li>
+							<li><a href="loaigiay?maloai=${loaigiay.maLoai }">${loaigiay.getTen() }
+							</a></li>
 						</c:forEach>
 					</ul>
 				</div>

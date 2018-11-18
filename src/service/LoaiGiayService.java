@@ -28,6 +28,7 @@ public class LoaiGiayService extends ConnectionClass {
 		}
 		rs.close();
 		pstmt.close();
+		closeConnection();
 		return loaiGiays;
 	}
 
